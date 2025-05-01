@@ -72,6 +72,10 @@ const update = async (req, res) => {
 const remove = async (req, res) => {
   const id = +req.params.id;
 
+  if (isNaN(id)) {
+    return res.status(400).send({ message: 'ID should be numeric' });
+  }
+
   try {
     const result = await userService.deleteUser(+id);
 

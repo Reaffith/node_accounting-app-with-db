@@ -1,4 +1,4 @@
-const expenseService = require('../service/expenceService');
+const expenseService = require('../service/expenseService');
 const userService = require('../service/userService');
 
 const getAll = async (req, res) => {
@@ -22,7 +22,7 @@ const getById = async (req, res) => {
     const result = await expenseService.getExpenseById(+id);
 
     if (!result) {
-      res.status(404).json({ message: 'No such expoence' });
+      res.status(404).json({ message: 'No such expense' });
     } else {
       res.status(200).json(result);
     }
